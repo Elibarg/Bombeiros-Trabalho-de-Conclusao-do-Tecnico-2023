@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>NOAR - Ficha de Ocorrência</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMAGENS/logo_medicina.png" type="image/png">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="CSS/index.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+<body>
+  <div id="barra-Lateral coluna" class="barra-Lateral" style="left: -220px;">
+    <div class="navigation justify" onclick="navigateToSlide(1)" style="height: 30px;">Paciente</div>
+    <div class="navigation justify" onclick="navigateToSlide(2)" style="height: 30px;">Emergências</div>
+    <div class="navigation justify" onclick="navigateToSlide(3)" style="height: 30px;">Avaliação Do Paciente</div>
+    <div class="navigation justify" onclick="navigateToSlide(4)" style="height: 30px;">Forma de Condução</div>
+    <div class="navigation justify" onclick="navigateToSlide(5)" style="height: 30px;">Decisão de Transporte</div>
+    <div class="navigation justify" onclick="navigateToSlide(6)" style="height: 30px;">Problemas Suspeitos</div>
+    <div class="navigation justify" onclick="navigateToSlide(7)" style="height: 30px;">Sinais Vitais</div>
+    <div class="navigation justify" onclick="navigateToSlide(8)" style="height: 30px;">Localização dos Traumas</div>
+    <div class="navigation justify" onclick="navigateToSlide(9)" style="height: 30px;">Objeto Recolhidos</div>
+    <div class="navigation justify" onclick="navigateToSlide(10)" style="height: 30px;">Sinais e Sintomas</div>
+    <div class="navigation justify" onclick="navigateToSlide(11)" style="height: 30px;">Procedimentos Efetuados</div>
+    <div class="navigation justify" onclick="navigateToSlide(12)" style="height: 30px;">Materiais Utilizados(A)</div>
+    <div class="navigation justify" onclick="navigateToSlide(13)" style="height: 30px;">Materiais Utilizados(B)</div>
+    <div class="navigation justify" onclick="navigateToSlide(14)" style="height: 30px;">Anamnese</div>
+    <div class="navigation justify" id="slide15Nav" onclick="navigateToSlide(15)" style="height: 30px; display: none;">Anamnese Gestacional</div>
+    <div class="navigation justify" onclick="navigateToSlide(16)" style="height: 30px;">Termo de Recusa de Ate...</div>
+    <div class="navigation justify" onclick="navigateToSlide(17)" style="height: 30px;">Observações Importantes</div>
+    <div class="navigation justify" onclick="navigateToSlide(18)" style="height: 30px;">Avaliação Cinemática</div>
+    <div class="navigation justify" onclick="navigateToSlide(19)" style="height: 30px;">Verificação</div>
+</div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide slide1"><!---------------------------------------------------------Inicio da página de Paciente --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Paciente
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"><!--inicio do corpo da página de Paciente-->
+        <form method="post">
+          <div class="linha centro" style="justify-content: space-between;width: 310px;">
+            <div class="coluna">
+              <span style="margin-left: 15px;">Data</span>
+              <input class="circulo" type="date" id="data_paciente" style="width: 140px;height: 40px; outline: none;">
+            </div>
+            <div class="coluna">
+              <span style="margin-left: 15px;">Sexo</span>
+              <div class="quadrado linha centro" style="justify-content: space-evenly;width: 140px;height: 40px;">
+                <div class="linha centro">
+                  <span style="font-size: 10px;">M</span>
+                  <input type="radio" id="sexo_paciente_m" onclick="SexoMasculino()" class="radio" value="m">
+                </div>
+                <div class="linha centro">
+                  <span style="font-size: 10px;">F</span>
+                  <input type="radio" id="sexo_paciente_f" onclick="SexoFeminino()" class="radio" value="f">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+              <span style="margin-left: 15px;">Nome Hospital:</span>
+              <div style="justify-content: start;">
+                <input type="text" id="nome_hospital_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+              </div>
+          </div>
+
+          <div class="linha" style="width: 310px;justify-content: space-between;margin-top: 10px;">
+            <div class="coluna">
+              <span style="margin-left: 15px;">Nome:</span>
+              <input type="text"id="nome_paciente" class="circulo" style=" width: 200px;height: 40px;   outline:none;        ">
+            </div>
+            <div class="coluna">
+              <span style="margin-left: 15px;">Idade:</span>
+              <input type="number" id="idade_paciente" class="circulo" style= "width: 70px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">RG/CPF:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="rg_cpf_paciente" class="circulo" style=" width: 300px;height: 40px;outline:none;">
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">Fone:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="fone_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+
+          <div class="linha" style="width: 310px;justify-content: space-between;margin-top: 10px;">
+            <div class="coluna">
+              <span style="margin-left: 15px;">Acompanhante:</span>
+              <input type="text" id="acompanhante_paciente" class="circulo" style=" width: 200px;height: 40px;   outline:none;        ">
+            </div>
+            <div class="coluna">
+              <span style="margin-left: 15px;">Idade:</span>
+              <input type="number" id="idade_acompanhante_paciente" class="circulo" style= "width: 70px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">Local de Ocorrência:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="local_ocorrencia_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+          
+          <div class="linha" style="width: 310px;justify-content: space-between;margin-top: 10px;">
+            <div class="coluna">
+              <span style="margin-left: 15px;">N°USB:</span>
+              <input type="text" id="n_usab_paciente" class="circulo" style=" width: 250px;height: 40px;   outline:none;        ">
+            </div>
+            <div class="coluna centro">
+              <span>CÓD.UR</span>
+              <input type="checkbox" id="cod_ur" class="checkbox" style="width: 20px;height: 20px;">
+            </div>  
+          </div>
+
+          <div class="linha" style="width: 310px;justify-content: space-between;margin-top: 10px;">
+            <div class="coluna">
+              <span style="margin-left: 15px;">N°OCORR:</span>
+              <input type="text" id="n_ocorr_paciente" class="circulo" style=" width: 250px;height: 40px;   outline:none;        ">
+            </div>
+            <div class="coluna centro">
+              <span>CÓD.PS</span>
+              <input type="checkbox" id="cod_ps" class="checkbox" style="width: 20px;height: 20px;">
+            </div>  
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">DESP:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="desp_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">H.CH:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="h_ch_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">KM FINAL:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="km_final_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+            </div>
+          </div>
+
+          <div class="coluna" style="width:310px;margin-top: 10px;">
+            <span style="margin-left: 15px;">CÓD.SIA/SUS:</span>
+            <div style="justify-content: start;">
+              <input type="text" id="cod_sia_sus_paciente" class="circulo" style=" width: 300px;height: 40px;   outline:none;        ">
+            </div>
+          </div>    
+        </form>
+        </div><!--Fim do corpo da página de Paciente-->
+      </div>
+      
+
+      <div class="swiper-slide slide2"><!---------------------------------------------------------Inicio da página de Emergências --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Emergências
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+          <form method="post" style="width: 100%;">
+            <div class="linha justify" style="width: 100%; justify-content: space-around;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Emergência médica</div>
+                <input id="emergencia_medica_er" value="Emergencia medica" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Emergência\ médica.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Com meio de Transporte</div>
+                <input id="com_meio_de_transporte_er" value="Com meio de Transporte" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Com\ meio\ de\ transporte.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Causado por Animais</div>
+                <input id="causado_por_animais_er" value="Causado por animais" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Causado\ por\ animais.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Incêndio</div>
+                <input id="incendio_er" value="incendio" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Incêndio.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Afogamento</div>
+                <input id="afogamento_er" value="afogamento" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Afogamento.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Deslizamento ou Desmoronamento</div>
+                <input id="deslizamento_desmoronamento_er" value="Deslizamento ou Desmoronamento" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Deslizamento\ \ Desmoronamento.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Agressão</div>
+                <input id="agressao_er" value="Agressao" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Agressão.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Queda de Altura 2M</div>
+                <input id="queda_aluta_2m_er" value="Queda de altura 2m" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Queda\ de\ altura\ 2M.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Tentativa de Suicídio</div>
+                <input id="tentativa_suicidio_er" value="tentativa_suicidio" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Tentativa\ \ de\ suicídio.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Queda Própria Altura</div>
+                <input id="queda_propria_altura_er" value="Quedapropria altura" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Queda\ própria\ altura.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Atropelamento</div>
+                <input id="Atropelamento_er" value="Atropelamento" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Atropelamento.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Choque Elétrico</div>
+                <input id="choque_eletrico_er" value="Choque Eletricos" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Choque\ elétrico.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Desabamento</div>
+                <input id="desabamento_er" value="Desabamento" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Desabamento.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Doméstico</div>
+                <input id="domestico_er" value="Domestico" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Doméstico.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Esportivo</div>
+                <input id="esportivo_er" value="Esportivo" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Esportivo.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Intoxicação</div>
+                <input id="intoxicacao_er" value="intoxicação" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Intoxicação.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Queda de Bicicleta</div>
+                <input id="queda_bicicleta_er" value="Queda de bicicleta" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Queda\ de\ bicicleta.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Queda de Moto</div>
+                <input id="queda_moto_er" value="Queda de Moto" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Queda\ de\ moto.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Queda<2M</div>
+                <input id="queda_er" value="Queda" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Queda\ de\ 2M.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Trabalho</div>
+                <input id="trabalho_er" value="Trabalho" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Trabalho.png); background-size: 150px;">
+              </div>
+            </div>
+            <div class="linha justify" style="width: 100%; justify-content: space-around; margin-top: 20px;">
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Transferência</div>
+                <input id="transferencia_er" value="Transferencia" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Trânsferencia.png); background-size: 150px;">
+              </div>
+              <div class="coluna centro">
+                <div class="centro span_emergencia">Outro</div>
+                <input id="outro_er" value="Outro" type="checkbox" class="checkbox-emergencia" style="background-image: url(IMAGENS/Outro.png); background-size: 150px;">
+              </div>
+            </div>
+          </form>
+        </div><!--Fim do corpo da página de ""-->
+      </div>
+      <div class="swiper-slide slide3"><!---------------------------------------------------------Inicio da página de Avaliação do Paciente --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Avaliação Do Paciente
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div>
+        <div class="cabecalho2 centro">
+          Nível de Consciência
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro" style="padding-top: 40px;"><!--inicio do corpo da página de ""-->
+          <div class="quadrado linha centro" style="width: 80%;height: 30px;justify-content: space-evenly;">
+            <span onclick="ocultarDivMa()" id="ocultar_div_ma" class="centro" style="width: 49.5%;height: 100%; background-color: #0667E8; color: white;">Menor de 5</span>
+            <div style="width: 1%;height: 100%;background-color: #0667E8;"></div>
+            <span onclick="ocultarDivMe()" id="ocultar_div_me" class="centro" style="width: 49.5%;height: 100%;">Maior de 5</span>
+          </div>
+
+        <div id="maiorque5paciente" style="display: none;" class="coluna">
+          <div class="linha centro" style="width: 100%;margin-top: 20px;">
+            <div class="circulo centro" style="width: 80px;height: 115px;background-color: #0667E8;border-radius: 10px;color: white;"><span class="centro" style="width: 60px;text-align: center;">Abertura Ocular</span></div><!-- ma=maior de 5 me menor de 5-->
+            <div class="coluna" style="margin-left: 3px;">
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Espontânea</span></div><input onclick="Espontanea(); AvaliacaoPacienteMaGCS();" id="espontanea_paciente_ma"  value="Espontanea " type="radio" class="radio">1</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Comando Verbal</span></div><input onclick="ComandoVerbal(); AvaliacaoPacienteMaGCS();" id="comando_verbal_paciente_ma"  value="Comando Verbal " type="radio" class="radio">2</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Estímulo Doloroso</span></div><input onclick="EstimuloDoloroso(); AvaliacaoPacienteMaGCS();" id="estimulo_doloroso_paciente_ma"  value="Estímulo Doloroso " type="radio" class="radio">3</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Nenhuma</span></div><input onclick="NenhumaAo(); AvaliacaoPacienteMaGCS();" checked="true" id="nenhuma_paciente_ma_ao"  value="Nenhuma" type="radio" class="radio">4</div>
+            </div>
+          </div>
+
+          <div class="linha centro" style="width: 100%;margin-top: 20px;">
+            <div class="circulo centro" style="width: 80px;height: 150px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Verbal</span></div> 
+            <div class="coluna" style="margin-left: 3px;">
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Orientado</span></div><input onclick="Orientado(); AvaliacaoPacienteMaGCS();" id="orientado_paciente_ma" value="Orientado" type="radio" class="radio">1</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Confuso</span></div><input onclick="Confuso(); AvaliacaoPacienteMaGCS();" id="confuso_paciente_ma" value="Confuso" type="radio" class="radio">2</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Palavras Inapropriadas</span></div><input onclick="PalavrasInapropriadas(); AvaliacaoPacienteMaGCS();" id="palavras_inapropriadas_paciente_ma" value="Palavras Inapropriadas" type="radio" class="radio">3</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Palavras Incompreensíveis</span></div><input onclick="PalavrasIncompreensiveis(); AvaliacaoPacienteMaGCS();" id="palavras_incompreensiveis_paciente_ma" value="Palavras Incompreensíveis" type="radio" class="radio">4</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Nenhuma</span></div><input onclick="NenhumaRv(); AvaliacaoPacienteMaGCS();" checked="true" id="nenhuma_paciente_ma_rv" value="Nenhuma" type="radio" class="radio">5</div>
+            </div>
+          </div>
+
+          <div class="linha centro" style="width: 100%;margin-top: 20px;">
+            <div class="circulo centro" style="width: 80px;height: 180px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Motora</span></div>
+            <div class="coluna" style="margin-left: 3px;">
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Obedece Comandos</span></div><input onclick="ObedeceComandosMa(); AvaliacaoPacienteMaGCS();" id="obedece_comandos_paciente_ma" value="Obedece Comandos" type="radio" class="radio">1</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Localiza dor</span></div><input onclick="LocalizaDorMa(); AvaliacaoPacienteMaGCS();" id="localiza_dor_paciente_ma" value="Localiza dor" type="radio" class="radio">2</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Movimento de retirada</span></div><input onclick="MovimentoDeRetiradaMa(); AvaliacaoPacienteMaGCS();" id="movimento_retirada_paciente_ma" value="Movimento de retirada" type="radio" class="radio">3</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Flexão Anormal</span></div><input onclick="FlexaoAnormalMa(); AvaliacaoPacienteMaGCS();" id="flexao_anormal_paciente_ma" value="Flexão Anormal" type="radio" class="radio">4</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Extensão Anormal</span></div><input onclick="ExtensaoAnormalMa(); AvaliacaoPacienteMaGCS();" id="extensao_anormal_paciente_ma" value="Extensão Anormal" type="radio" class="radio">5</div>
+              <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Nenhuma</span></div><input onclick="NenhumaRmMa(); AvaliacaoPacienteMaGCS();" checked="true" id="nenhuma_paciente_ma_rm" value="Nenhuma" type="radio" class="radio">6</div>
+            </div>
+          </div>
+          <input type="button" onclick="ChooseAvaPaciente()"> 
+        </div>
+
+        <div id="menorque5paciente" style="display: flex; text-align: center" class="coluna">
+            <div class="linha centro" style="width: 100%;margin-top: 20px;">
+              <div class="circulo centro" style="width: 80px;height: 120px;background-color: #0667E8;border-radius: 10px;color: white;"><span class="centro" style="width: 60px; text-align: center;">Abertura Ocular</span></div>
+              <div class="coluna" style="margin-left: 3px;">
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Espontânea</span></div><input onclick="EspontaneaMe(); AvaliacaoPacienteMeGCS();" id="espontanea_paciente_me" value="Espontânea" type="radio" class="radio">1</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Comando Verbal</span></div><input onclick="ComandoVerbalMe(); AvaliacaoPacienteMeGCS();" id="comando_verbal_paciente_me" value="Comando Verbal" type="radio" class="radio">2</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Estímulo Doloroso</span></div><input onclick="EstimuloDolorosoMe(); AvaliacaoPacienteMeGCS();" id="estimulo_doloroso_paciente_me" value="Estímulo Doloroso" type="radio" class="radio">3</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Nenhuma</span></div><input onclick="NenhumaAoMe(); AvaliacaoPacienteMeGCS();" checked="true" id="nenhuma_paciente_me_ao" value="Nenhuma" type="radio" class="radio">4</div>
+              </div>
+            </div>
+  
+            <div class="linha centro" style="width: 100%;margin-top: 20px;">
+              <div class="circulo centro" style="width: 80px;height: 150px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center">Resposta Verbal</span></div>
+              <div class="coluna" style="margin-left: 3px;">
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Palavras e Frases Inapropriadas</span></div><input onclick="PalavrasEFrasesInapropriadasMe(); AvaliacaoPacienteMeGCS();" id="palavras_e_frases_inapropriadas_paciente_me" value="Palavras e Frases Inapropriadas" type="radio" class="radio">1</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Palavras Inapropriadas</span></div><input onclick="PalavrasInapropriadasMe(); AvaliacaoPacienteMeGCS();" id="palavras_inapropriadas_paciente_me" value="Palavras Inapropriadas" type="radio" class="radio">2</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Choro Persistentes ou Gritos</span></div><input onclick="ChoroPersistentesOuGritosMe(); AvaliacaoPacienteMeGCS();" id="choro_persistentes_ou_gritos_paciente_me" value="Choro Persistentes ou Gritos" type="radio" class="radio">3</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Sons Incompreensíveis</span></div><input onclick="SonsIncompreensiveisMe(); AvaliacaoPacienteMeGCS();" id="sons_incompreensíveis_paciente_me" value="Sons Incompreensíveis" type="radio" class="radio">4</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Nenhuma</span></div><input onclick="NenhumaRvMe(); AvaliacaoPacienteMeGCS();" checked="true" id="nenhuma_paciente_me_rv" value="Nenhuma" type="radio" class="radio">5</div>
+              </div>
+            </div>
+  
+            <div class="linha centro" style="width: 100%;margin-top: 20px;">
+              <div class="circulo centro" style="width: 80px;height: 181px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Motora</span></div>
+              <div class="coluna" style="margin-left: 3px;">
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Obedece Comandos</span></div><input onclick="ObedeceComandosMe(); AvaliacaoPacienteMeGCS();" id="obedece_comando_paciente_me" value="Obedece Comandos" type="radio" class="radio">1</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Localiza dor/Estímulo Tatil</span></div><input onclick="LocalizaDorEstimuloTatilMe(); AvaliacaoPacienteMeGCS();" id="localiza_dor_estimulo_tatil_paciente_me" value="Localiza dor/Estímulo Tatil" type="radio" class="radio">2</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Retirada do Segmento Estimulado</span></div><input onclick="RetiradaDoSegmentoEstimuladoMe(); AvaliacaoPacienteMeGCS();" id="retirada_do_segmento_estimulado_paciente" value="Retirada do Segmento Estimulado" type="radio" class="radio">3</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Flexão Anormal (Decorticação)</span></div><input onclick="FlexaoAnormal(); AvaliacaoPacienteMeGCS();" id="flexao_anormal_paciente_me" value="Flexão Anormal(Decorticação)" type="radio" class="radio">4</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Extensão Anormal (Decerebração)</span></div><input onclick="ExtensaoAnormal(); AvaliacaoPacienteMeGCS();" id="extensao_anormal_paciente_me" value="Extensão Anormal(Decerebração)" type="radio" class="radio">5</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Ausência (Paralisia Falecida, Hipônia)</span></div><input onclick="AusenciaMe(); AvaliacaoPacienteMeGCS();" checked="true" id="ausencia_paciente" value="Ausência(Paralisia Falecida, Hipônia)" type="radio" class="radio">6</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="linha centro" style="margin-left: -5px;">
+            <div class="linha centro" style="margin-top: 10px;">
+              <span style="font-size: 14px;">Total(GCS)(3-15): </span>
+              <span class="centro" id="total_gcs_paciente" style="font-size: 14px; width: 30px;">15</span>
+            </div>
+            <div style="width: 190px;"></div>
+          </div>
+          
+        </div><!--Fim do corpo da página de ""-->
+
+      </div><!-- Fim da página de "" -->
+
+      <div class="swiper-slide slide4"><!---------------------------------------------------------Inicio da página de Forma de Condução --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Forma de Condução
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+          <form method="post">
+            <div class="linha circulo centro" style="background-color: #0667E8; border-radius: 5px; width: 250px; height: 90px;justify-content: space-evenly; ">
+              <div class="coluna centro" style="color: white;">
+                <span style="font-size: 13px;">DEITADA</span>
+                <input id="deitada_conducao" value="deitada" type="radio" class="radio-quadrado-azul" onclick="Deitada()">
+               </div>
+               <div class="coluna centro" style="color: white;">
+                <span style="font-size: 13px;">SEMI-DEITADA</span>
+                <input id="semi_deitada_conducao" value="semi_deitada" type="radio" class="radio-quadrado-azul"onclick="Semi_Deitada()">
+               </div>
+               <div class="coluna centro" style="color: white;">
+                <span style="font-size: 13px;">SENTADA</span>
+                <input id="sentada_conducao" value="sentada" type="radio" class="radio-quadrado-azul"onclick="Sentada()">
+               </div>   
+            </div>
+
+                <div class="linha circulo centro" style="color: white; background-color: #0667E8; border-radius: 5px; width: 250px; height: 50px;justify-content: space-evenly; margin-top: 20px;">
+                  <span style="font-size: 20px;"> A VITIMA ERA</span>
+                </div>
+
+           <div class="coluna circulo centro" style= "margin-top: 20px; background-color: #0667E8; border-radius: 5px; width: 250px; height: 400px;justify-content: space-evenly; ">
+            <div style="width:100%;">
+              <div class="linha centro" style="justify-content: space-around; width:100%;"> 
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Ciclista</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Condutor-Moto</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Gestante</span>
+              </div>
+                  <div class="linha centro" style="justify-content: space-around;width: 100%;">
+                        <div class="coluna centro" style="color: white;">
+                          <input id="fc_ciclista" value="ciclista" type="checkbox" class="checkbox-quadrado-azul">
+                        </div>
+                        <div class="coluna centro" style="color: white;">                       
+                          <input id="fc_condutor_moto"value="condutor_moto" type="checkbox" class="checkbox-quadrado-azul">
+                        </div>
+                          <div class="coluna centro" style="color: white;">
+                            <input id="fc_gestante"value="gestante" type="checkbox" class="checkbox-quadrado-azul">
+                          </div>  
+                  </div>
+            </div>
+            <div style="width:100%;">
+              <div class="linha centro" style="justify-content: space-around; width:100%;"> 
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Pass Ban Frente</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Pass Moto</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Condutor-Carro</span>
+              </div>
+                  <div class="linha centro" style="justify-content: space-around;width: 100%;">
+                        <div class="coluna centro" style="color: white;">
+                          <input id="fc_pass_ban_frente"value="pass_ban_frente" type="checkbox" class="checkbox-quadrado-azul">
+                        </div>
+                        <div class="coluna centro" style="color: white;">                       
+                          <input id="fc_pass_moto"value="pass_moto" type="checkbox" class="checkbox-quadrado-azul">
+                        </div>
+                          <div class="coluna centro" style="color: white;">
+                            <input id="fc_condutor_carro"value="condutor_carro" type="checkbox" class="checkbox-quadrado-azul">
+                          </div>  
+                  </div>
+            </div>
+            <div style="width:100%;">
+              <div class="linha centro" style="justify-content: space-around; width:100%;"> 
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Clinico</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Trauma</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Pass Ban Trás</span>
+              </div>
+                  <div class="linha centro" style="justify-content: space-around;width: 100%;">
+                        <div class="coluna centro" style="color: white;">
+                          <input id="fc_clinico"value="clinico" type="checkbox" class="checkbox-quadrado-azul">
+                        </div>
+                        <div class="coluna centro" style="color: white;">                       
+                          <input id="fc_trauma"value="trauma" type="checkbox" class="checkbox-quadrado-azul">
+                        </div>
+                          <div class="coluna centro" style="color: white;">
+                            <input id="fc_pass_ban_tras"value="pass_ban_tras" type="checkbox" class="checkbox-quadrado-azul">
+                          </div>  
+                  </div>
+            </div>
+            <div style="width:100%;">
+              <div class="linha centro" style="justify-content: space-around; width:100%;"> 
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Pedestre</span>
+              </div>
+                  <div class="linha centro" style="justify-content: space-around;width: 100%;">
+                        <div class="coluna centro" style="color: white;">
+                          <input id="fc_pedestre"value="pedestre" type="checkbox" class="checkbox-quadrado-azul">
+                        </div> 
+                  </div>
+            </div>           
+          </div>
+        </form>
+      </div>
+        </div><!--Fim do corpo da página de ""-->
+
+      <div class="swiper-slide slide5"><!---------------------------------------------------------Inicio da página de Decisão de Transporte --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Decisão de Transporte
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <form class="slide-body centro"><!--inicio do corpo da página de ""-->
+          <div class="coluna centro" style= "background-color: #0667E8;  width: 340px; height: 200px; ">
+            <div style="width:100%;">
+              <div class="linha centro" style="justify-content: space-around; width:100%;"> 
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Crítico</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Instável</span>
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Estavel</span>
+              </div>
+                  <div class="linha centro" style="justify-content: space-around;width: 100%;">
+                        <div class="coluna centro" style="color: white;">
+                          <input id="critico_dt" name="radio_botao" value="Critico" type="radio" style="width: 24px; height: 24px;" class="radio-quadrado-azul">
+                        </div>
+                        <div class="coluna centro" style="color: white;">                       
+                          <input id="instavel_dt" name="radio_botao" value="Instavel" type="radio" style="width: 24px; height: 24px;" class="radio-quadrado-azul">
+                        </div>
+                          <div class="coluna centro" style="color: white;">
+                            <input id="estavel_dt" name="radio_botao" value="Estavel" type="radio" style="width: 24px; height: 24px;" class="radio-quadrado-azul">
+                          </div>
+                  </div>
+
+            </div>
+            <div style="width:100%;">
+              <div class="linha centro" style="justify-content: space-around; width:100%;"> 
+                <span class="centro" style="font-size: 13px;width: 20px;text-align: center; color: white;">Potencialmente Instável</span>
+               
+              </div>
+                  <div class="linha centro" style="justify-content: space-around;width: 100%;">
+                        <div class="coluna centro" style="color: white;">
+                          <input id="potencial_mente_instavel_dt" name="radio_botao" value="PotencialmenteInstavel" type="radio" style="width: 24px; height: 24px;" class="radio-quadrado-azul">
+                        </div>
+                  </div>
+            </div>
+          </div>
+          <div class="linha centro" style="width: 340px; height: 75px; background-color: #0667E8; margin-top: 20px;">
+            <span style="color: white; font-size: 25px;">Decisão de Transporte</span>
+          </div>
+            <div class="coluna centro" style="justify-content: space-around; height: 365px;">
+                <div class="linha centro" >
+                  <span>M:</span> <input type="text" id="m_dt" class="circulo" style="outline:none; width: 300px;height: 46px;">
+                </div>
+                <div class="linha centro">
+                  <span>S1:</span> <input type="text" id="s1_dt" class="circulo" style="outline:none; width: 300px;height: 46px;">
+                </div>
+                <div class="linha centro">
+                  <span>S2:</span> <input type="text" id="s2_dt" class="circulo" style="outline:none; width: 300px;height: 46px;">
+                </div>
+                <div class="linha centro">
+                  <span>S3:</span> <input type="text" id="s3_dr" class="circulo" style="outline:none; width: 300px;height: 46px;">
+                </div>
+                <div class="linha centro">
+                  <span>Demante:</span> <input type="text" id="demante_dt" class="circulo" style="outline:none; width: 250px;height: 46px;">
+                </div>
+            </div>
+        </div>
+        
+      </form><!--Fim do corpo da página de ""-->
+
+      
+      <div class="swiper-slide slide6"><!---------------------------------------------------------Inicio da página de Problemas Suspeitos --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Problemas Suspeitos
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <form class="slide-body centro" style="padding: 0px;" method="post"><!--inicio do corpo da página de ""-->
+          <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
+            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" id="psiquiatrico_ps" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Psiquiatrico</span></div>
+          </div>
+          <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
+            <div class="centro" style="width: 24px; height: 100%;"><input onclick="MostrarRespiratorioPS()" id="respiratorio_ps_checkbox" type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Respiratório</span></div>
+          </div>
+          <div class="justify centro coluna" id="div_respiratorio_ps" style="display: none;">
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input name="problema_respiratorio_ps" id="respiratorio_dpoc_ps" value="DPOC" type="radio" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">DPOC</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input name="problema_respiratorio_ps" id="respiratorio_fumaca_ps" value="Inalação de Fumaça" type="radio" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Inalação de fumaça</span></div>
+            </div>
+          </div>
+          <div class="circulo justify centro  linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
+            <div class="centro" style="width: 24px; height: 100%;"><input id="diabetes_ps" onclick="MostrarDiabetesPS()" type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Diabetes</span></div>
+          </div>
+          <div class="justify centro coluna" id="div_diabetes_ps" style="display: none;">
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="diabete_hiperglicemia_ps" value="Hiperglicemia" name="problema_diabete_ps" type="radio" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hiperglicemia</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="diabete_hipoglicemia_ps" value="Hipoglicemia" name="problema_diabete_ps" type="radio" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hipoglicemia</span></div>
+            </div>
+          </div>
+          <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
+            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" onclick="MostrarObstericosPS()" id="obsterico_ps" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Obstétricos</span></div>
+          </div>
+          <div class="justify centro coluna" id="div_obsterico_ps" style="display: none;">
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_parto_emergencial_ps" value="Parto Emergêncial" name="problema_obsterico_ps" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Parto Emergêncial</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_gestante_ps" value="Gestante" name="problema_obsterico_ps" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Gestante</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_hemor_ps" value="Hemor Excessiva" name="problema_obsterico_ps" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hemor.excessiva</span></div>
+            </div>
+          </div>
+          <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
+            <div class="centro" style="width: 24px; height: 100%;"><input onclick="MostrarTransportePS()" id="transporte_ps" type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Transporte</span></div>
+          </div>
+          <div class="justify centro coluna" id="div_transporte_ps" style="display: none;">
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_aereo_ps" name="transporte_ps" value="Aéreo" type="radio" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Aéreo</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_clinico_ps" name="transporte_ps" value="Clinico" type="radio" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Clinico</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_emergencial_ps" type="radio" name="transporte_ps" value="Emergêncial" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Emergêncial</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_pos_trauma_ps" type="radio" name="transporte_ps" value="Pós-Trauma" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Pós-Trauma</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_samu_ps" type="radio" name="transporte_ps" value="Samu" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Samu</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_outros_ps" type="radio" name="transporte_ps" value="Outros" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Outros</span></div>
+            </div>
+            <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_sem_remocao_ps" type="radio" name="transporte_ps" value="Sem Remoção" class="radio-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Sem remoção</span></div>
+            </div>
+          </div>
+          <div class="circulo justify centro coluna" style="width: 308px; height: 70px; border: none; background-color: #0667E8; margin-top: 30px;">
+            <div class="centro" style="width: 200px; height: 35px;"><span style="color: aliceblue;font-size: 20px;">Outro</span></div>
+            <input id="transporte_outro_texto_ps" value="" placeholder="Digite Aqui" type="text" style="border-style:solid; border-color: #000000; outline:none;">
+          </div>
+          <div class="centro justify" style="width: 250px;margin-top: 15px;">
+            <input type="button" onclick="LimparRadioPS()" class="circulo centro" style="width: 100px; height: 30px; border: 1px solid green; background-color: greenyellow;" value="Limpar">
+          </div>
+          
+        </form><!--Fim do corpo da página de Problemas Suspeitos-->
+
+      </div><!-- Fim da página de "" -->
+
+      <div class="swiper-slide slide7"><!---------------------------------------------------------Inicio da página de Sinais Vitais --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Sinais Vitais
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+          <div>
+          <div class="coluna" style="width: 100%;">
+            <span style="color: black;margin-left: 15px;">Pressão Arterial</span>
+            <div class="linha"  >
+              <input type="number" id="pressao_arterial_sv" class="input-linha" style="height: 40px;width: 120px;">
+              <span class="centro">x</span>
+              <input type="number" id="mmhg_sv" class="input-linha" style="height: 40px;width: 120px;">
+              <span class="centro">mmhg</span>
+            </div>
+          </div>
+          <div class="coluna" style="margin-top: 10px;width: 100%;">
+            <span style="color: black;margin-left: 15px;">Pulso</span>
+              <div class="linha">
+                <input type="number" id="pulso_sv" class="input-linha" style="height: 40px;width: 150px;">
+                <span class="centro">BSPM</span>
+              </div>
+            </div>
+          <div class="coluna" style="margin-top: 10px;width: 100%;">
+            <span style="color: black;margin-left: 15px;">Respiração</span>
+              <div class="linha">
+                <input type="number" id="respiracao_sv" class="input-linha" style="height: 40px;width: 150px;">
+                <span class="centro">M.R.M.</span>
+              </div>
+          </div>
+          
+          <div class="coluna" style="margin-top: 10px;width: 100%;">
+            <span style="color: black;margin-left: 15px;">Temperatura</span>
+              <div class="linha">
+                <input type="number" id="temperatura_sv" class="input-linha" style="height: 40px;width: 150px;">
+                <span class="centro">°C</span>
+                <div class="coluna centro" style="margin-left: 15px;">
+                  <span>Anormal</span>
+                  <input type="checkbox" id="anormal_sv" class="checkbox" style="width: 20px;height: 20px;">
+                </div>  
+              </div>
+          </div>
+          <div class="linha quadrado centro" style="width: 100%;justify-content: space-evenly;height: 45px;margin-top: 20px;">
+            <div class="linha centro">
+              <span>>2seg</span>
+              <input type="radio" value=">2seg" name="SinaisVitaes" id="maior_2_seg_sv" value="Maior 2Seg" class="radio" style="width: 20px;height: 20px;">
+            </div>
+            <div class="linha centro">
+              <span><2seg</span>
+              <input type="radio" value="<2seg" name="SinaisVitaes" id="menor_2_seg_sv" value="Menor 2Seg" class="radio" style="width: 20px;height: 20px;">
+            </div>
+            <div class="linha centro">
+              <span>Normal</span>
+              <input type="radio" value="Normal" name="SinaisVitaes" id="normal_sv" value="Normal" class="radio" style="width: 20px;height: 20px;">
+            </div>
+          </div>
+        </div>
+      </div><!--Fim do corpo da página de ""-->
+        </div>
+
+      <div class="swiper-slide slide8"><!---------------------------------------------------------Inicio da página de Localização dos Traumas --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Localização dos Traumas
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+      <div style="width: 100%; justify-content: space-between; flex-direction: column;display: flex;"> 
+        <div class="centro coluna" id="dv_traumas_imagem" style="padding-bottom: 20px;"> 
+          <div class="quadrado linha centro" style="width: 320px;height: 30px; margin-bottom: 5px;">
+            <span class="centro" style="width: 50%;height: 100%;" id="div_menor_trauma" onclick="AtivarMenorTrauma()">Menor de 5</span>
+            <span class="centro" style="width: 50%;height: 100%; background-color: #0667E8; color: white;" id="div_maior_trauma" onclick="AtivarMaiorTrauma()">Maior de 5</span>
+          </div>
+            <div id="captura_traumas"><div id="div_traumas_localizados" onclick="inserirImagem(event)" class="coluna centro" style="border-style:solid; border-color: #0667E8; width: 320px; position: relative;">
+              <img src="IMAGENS/corpo-maior-5.png" style="width: 90%;" id="imagem_maior_trauma">
+              <img src="IMAGENS/corpo-menor-5.png" style="width: 90%; display: none;" id="imagem_menor_trauma">
+          </div></div>
+              <div class="coluna centro">
+                <div class="linha space-between" style="width: 325px;">
+                  <div onclick="MudarImagemFratura()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Fraturas-Luxações-Entorses.png" width="25px" > 
+                    <span class="centro"style="font-size: 11px;">Fraturas/Luxações/Entorses</span>
+                  </div>
+                  <div onclick="MudarImagemFerimento()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Ferimentos-Diversos.png" > 
+                    <span  class="centro">Ferimentos Diversos</span>
+                  </div>
+                </div>
+                <div class="linha space-between" style="width: 325px;">
+                  <div onclick="MudarImagemHemorragia()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Hemorragias.png" width="30px" > 
+                    <span class="centro">Hemorragias</span>
+                  </div>
+                  <div onclick="MudarImagemQueimadura1()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Queimadura-de-1.png"width="30px" > 
+                    <span class="centro">Queimadura de 1°</span>
+                  </div>
+                </div>
+                <div class="linha space-between" style="width: 325px;">
+                  <div onclick="MudarImagemQueimadura3()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Queimadura-de-3.png"width="30px" > 
+                    <span class="centro">Queimadura de 3°</span>
+                  </div>
+                  <div onclick="MudarImagemQueimadura2()" class="linha " style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Queimadura-de-2.png"width="30px"> 
+                    <span class="centro" >Queimadura de 2°</span>
+                  </div>
+                </div>
+                <div class="linha space-between" style="width: 325px;">
+                  <div onclick="MudarImagemEsviceracao()" class="linha " style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Esviceração.png"width="25px" > 
+                    <span class="centro" >Esviceração</span>
+                  </div>
+                  <div onclick="MudarImagemFABFAF()" class="linha " style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/F.A.B-F.A.F.png"width="25px" > 
+                    <span class="centro" >F.A.B / F.A.F</span>
+                  </div>
+                </div>
+                <div class="linha space-between" style="width: 325px;">
+                  <div onclick="MudarImagemAmputacao()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
+                    <img src="IMAGENS/Amputação.png"width="25px" > 
+                    <span class="centro" >Amputação</span>
+                  </div>
+                </div>
+               </div>
+          </div>
+          <div>           
+              <div class="linha  centro" style="color: white; background-color: #0667E8;  width: 100%; height: 50px;">
+                  <span class=" coluna centro" style="font-size: 20px; text-align: center;">Ferimentos/Fraturas/Entorses<br>Luxação/Contusão</span>
+                </div>
+                <div class="coluna centro" style="margin-top: 20px;"> 
+                  <table border="1" id="tabela_de_traumas" style="border-style:solid; border-color: #0667E8; width: 300px; ">
+                      <thead> <!-- Use thead to define the table header -->
+                          <tr style="border-style:solid; border-color: #0667E8;">
+                              <th>Local</th>
+                              <th>Lado</th>
+                              <th>Face</th>
+                              <th>Tipo</th>
+                          </tr>
+                      </thead>
+                      <tbody id="tbody_corpo">
+                          <!-- Content goes here -->
+                      </tbody>
+                  </table>
+                  <div class="linha">
+                      <!-- Cute buttons -->
+                      <input type="button" onclick="adicionarLinhaTraumas()" value="Nova Linha :3"
+                      style="width: 100px; 
+                      height: 30px; 
+                      border: 1px solid black; 
+                      border-radius: 10px; 
+                      margin-top: 10px;">
+                      <!-- Cute buttons -->
+                      <input type="button" onclick="limparTabelaTraumas()" value="Limpar :3"
+                      style="width: 100px; 
+                      height: 30px; 
+                      border: 1px solid black; 
+                      border-radius: 10px; 
+                      margin-top: 10px;">
+                      <!-- Cute buttons -->
+                  </div>
+              </div>
+              
+            <div>
+                <div class="coluna centro" style="margin-top: 20px;">
+                  <table border="1" style="border-style:solid; border-color: #0667E8; width: 300px; ">
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;">
+                      <th>Queimadura</th>
+                      <th>1°Grau</th>
+                      <th>2°Grau</th>
+                      <th>3°Grau</th>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> cabeça</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1Cabeca()" type="checkbox" class="radio" id="radio_1_cabeca_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2Cabeca()" type="checkbox" class="radio" id="radio_2_cabeca_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3Cabeca()" type="checkbox" class="radio" id="radio_3_cabeca_trauma"></td>
+            
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> pescoço</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1Pescoco()" type="checkbox" class="radio" id="radio_1_pescoco_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2Pescoco()" type="checkbox" class="radio" id="radio_2_pescoco_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3Pescoco()" type="checkbox" class="radio" id="radio_3_pescoco_trauma"></td>
+            
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> T.Ant</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1TANT()" type="checkbox" class="radio" id="radio_1_tant_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2TANT()" type="checkbox" class="radio" id="radio_2_tant_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3TANT()" type="checkbox" class="radio" id="radio_3_tant_trauma"></td>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> T.Pos</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1TPOS()" type="checkbox" class="radio" id="radio_1_tpos_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2TPOS()" type="checkbox" class="radio" id="radio_2_tpos_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3TPOS()" type="checkbox" class="radio" id="radio_3_tpos_trauma"></td>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> GENI</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1Geni()" type="checkbox" class="radio" id="radio_1_geni_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2Geni()" type="checkbox" class="radio" id="radio_2_geni_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3Geni()" type="checkbox" class="radio" id="radio_3_geni_trauma"></td>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.I.D</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1MID()" type="checkbox" class="radio" id="radio_1_mid_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2MID()" type="checkbox" class="radio" id="radio_2_mid_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3MID()" type="checkbox" class="radio" id="radio_3_mid_trauma"></td>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.I.E</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1MIE()" type="checkbox" class="radio" id="radio_1_mie_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2MIE()" type="checkbox" class="radio" id="radio_2_mie_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3MIE()" type="checkbox" class="radio" id="radio_3_mie_trauma"></td>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.S.D</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1MSD()" type="checkbox" class="radio" id="radio_1_msd_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2MSD()" type="checkbox" class="radio" id="radio_2_msd_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3MSD()" type="checkbox" class="radio" id="radio_3_msd_trauma"></td>
+                    </tr>
+                    <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.S.E</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio1MSE()" type="checkbox" class="radio" id="radio_1_mse_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio2MSE()" type="checkbox" class="radio" id="radio_2_mse_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input onclick="AtivarRadio3MSE()" type="checkbox" class="radio" id="radio_3_mse_trauma"></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>  
+          </div>
+        </div><!--Fim do corpo da página de ""-->
+      </div>
+      </div>
+      <div class="swiper-slide slide9"><!---------------------------------------------------------Inicio da página de Objeto Recolhidos --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Objeto Recolhidos
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+          <div type="text" contenteditable="true" id="objescolhido_div" class="quadrado" style="outline:none; width: 300px; min-height: 100px; outline: none; word-break: break-all; word-wrap: break-word;"></div>
+          <div class="centro" style="width: 100%; height: 200px; justify-content: space-around;">
+            <img src="IMAGENS/camera_azul.png" width="100px">
+            <img src="IMAGENS/img_icon.png" width="90px" onclick="SelecionarImagensObj()">
+          </div>
+          <div class="centro" id="div_imagens_obj" style="width: 95%; min-height: 110px; background-color: #0668e818; justify-content: space-around; flex-wrap: wrap;">
+          </div>
+          <button onclick="SalvarImagensObj()"></button>
+        </div><!--Fim do corpo da página de ""-->
+
+      </div><!-- Fim da página de "" -->
+
+      <div class="swiper-slide slide10"><!---------------------------------------------------------Inicio da página de Sinais e Sintomas --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Sinais e Sintomas
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <form method="post" class="slide-body"><!--inicio do corpo da página de ""-->
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_abdomen_sensivel_ou_rigido" value="Abdomen Sensível ou Rigido" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Abdomen Sensível ou Rigido</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_afundamento_cranio" value="Afundamento de Crânio" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Afundamento de Crânio</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_agitacao" value="Agitação" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Agitação</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_aminesia" value="Aminésia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Aminésia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_apineia" value="Apinéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Apinéia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_bradicardia" value="Bradicardia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Bradicardia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_bradipneia" value="Bradipnéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Bradipnéia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_bronco_aspirando" value="Bronco-Aspirando" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Bronco-Aspirando</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_cefaleia" value="Cefalia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cefalia</span></div>
+          <div class="linha justify">
+            <input type="checkbox" onclick="CinoseCheckbox()" id="sinais_e_sintomas_cinose" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cinose</span>
+            <div class="coluna" id="div_cinose" style="display: none;">
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_labios" value="Lábios" name="sinais_e_sintomas_cinose"  class="radio"><span style="font-size: 15px;margin-left: 5px;">Lábios</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_extremidades" value="Extremidades" name="sinais_e_sintomas_cinose" class="radio"><span style="font-size: 15px;margin-left: 5px;">Extremidades</span></div>
+            </div>
+          </div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_convulsao" value="Convulsão" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Convulsão</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_decorticacao" value="Decorticação" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Decorticação</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_deformidade" value="Deformidade" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Deformidade</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_descerebracao" value="Descerebração" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Descerebração</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_desmaio" value="Desmaio" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Desmaio</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_desvio_de_traqueia" value="Desvio de Traquéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Desvio de Traquéia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_dispneia" value="Dispnéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Dispnéia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_dor_local" value="Dor local" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Dor local</span></div>
+          <div class="linha justify">
+            <input type="checkbox" onclick="EdemaCheckbox()" id="sinais_e_sintomas_edema" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Edema</span>
+            <div class="coluna" id="div_edema" style="display: none;">
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_generalizado" value="Generalizado" name="sinais_e_sintomas_edema" class="radio"><span style="font-size: 15px;margin-left: 5px;">Generalizado</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_localizado" value="Localizado" name="sinais_e_sintomas_edema" class="radio"><span style="font-size: 15px;margin-left: 5px;">Localizado</span></div>
+            </div>
+          </div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_enfisema_subcutaneo" value="Enfisema subcutâneo" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Enfisema subcutâneo</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_estase_de_jugular" value="Êstase de jugular" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Êstase de jugular</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_face_palida" value="Face Pálida" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Face Pálida</span></div>
+          <div class="linha justify"><input type="checkbox" onclick="HemorragiaCheckbox()" id="sinais_e_sintomas_hemorragia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Hemorragia</span>
+            <div class="coluna" id="div_hemorragia" style="display: none;">
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_interna" value="Interna" name="sinais_e_sintomas_hemorragia" class="radio"><span style="font-size: 15px;margin-left: 5px;">Interna</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_externa" value="Externa" name="sinais_e_sintomas_hemorragia" class="radio"><span style="font-size: 15px;margin-left: 5px;">Externa</span></div>
+          </div>
+          </div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_hipertensao" value="Hipertensão" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Hipertensão</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_hipotensao" value="Hipotensão" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Hipotensão</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_nauses_e_vomitos" value="Náuses e vômitos" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Náuses e vômitos</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_nasoragia" value="Nasoragia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Nasoragia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_obito" value="Óbito" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Óbito</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_otorreia" value="Otorréia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Otorréia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_ovace" value="O.V.A.C.E" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">O.V.A.C.E</span></div>
+          <div class="linha justify"><input type="checkbox" onclick="ParadaCheckbox()" id="sinais_e_sintomas_parada" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Parada</span>
+            <div class="coluna" id="div_parada" style="display: none;">
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_cardiaca" name="sinais_e_sintomas_parada" value="Cardíaca" class="radio"><span style="font-size: 15px;margin-left: 5px;">Cardíaca</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_respiratoria" name="sinais_e_sintomas_parada" value="Respiratória" class="radio"><span style="font-size: 15px;margin-left: 5px;">Respiratória</span></div>
+          </div>
+          </div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_priaprismo" value="Priaprismo" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Priaprismo</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_prurido_na_pele" value="Prurido" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Prurido na Pele</span></div>
+          <div class="linha justify">
+            <input type="checkbox" onclick="PupilasCheckbox()"  id="sinais_e_sintomas_pupilas" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Pupilas</span>
+            <div class="coluna" id="div_pupilas" style="display: none;">
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_anisocoria" value="Anisocoria" name="sinais_e_sintomas_pupilas" class="radio"><span style="font-size: 15px;margin-left: 5px;">Anisocoria</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_isocoria" value="Isocoria" name="sinais_e_sintomas_pupilas" class="radio"><span style="font-size: 15px;margin-left: 5px;">Isocoria</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_reagente" value="Reagente" name="sinais_e_sintomas_pupilas" class="radio"><span style="font-size: 15px;margin-left: 5px;">Reagente</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_n_reagente" value="Ñ Reagente" name="sinais_e_sintomas_pupilas" class="radio"><span style="font-size: 15px;margin-left: 5px;">Ñ Reagente</span></div>
+            
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_midriase" value="Midriase" name="sinais_e_sintomas_pupilas" class="radio"><span style="font-size: 15px;margin-left: 5px;">Midriase</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_miose" value="Miose" name="sinais_e_sintomas_pupilas" class="radio"><span style="font-size: 15px;margin-left: 5px;">Miose</span></div>
+            </div>
+
+          </div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_sede" value="Sede" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Sede</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_sinal_de_battle" value="Sinal de Battle" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Sinal de Battle</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_sinal_de_guaxinim" value="Sinal de Guaxinim" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Sinal de Guaxinim</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_sudorese" value="Sudorese" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Sudorese</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_taquipnéia" value="Taquipnéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Taquipnéia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_taquicardia" value="Taquicardia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Taquicardia</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_tontura" value="Tontura" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tontura</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_txt" onclick="TXTCheckbox()" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;"> <input style="display: none;outline:none;"   type="text" value="" id="sinais_e_sintomas_input_txt" class="input-linha"></span></div>
+
+        </form><!--Fim do corpo da página de ""-->
+
+      </div>
+
+      <div class="swiper-slide slide11"><!---------------------------------------------------------Inicio da página de Procedimentos Efetuados --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Procedimentos Efetuados
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <form method="post" class="slide-body"><!--inicio do corpo da página de ""-->
+          
+            <div class="linha justify"><input type="checkbox" id="aspiracao_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Aspiração</span></div>
+            <div class="linha justify"><input type="checkbox" id="avaliacao_inicial_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Avaliação Inicial</span></div>
+            <div class="linha justify"><input type="checkbox" id="avaliacao_continuada_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Avaliação Continuada</span></div>
+            <div class="linha justify"><input type="checkbox" id="chave_rautek_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Chave de Rautek</span></div>
+            <div class="linha justify"><input type="checkbox" id="canula_guedel_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cânula de Guedel</span></div>
+            <div class="linha justify"><input type="checkbox" id="desobstrucao_va_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Desobstrução de V.A</span></div>
+            <div class="linha justify"><input type="checkbox" id="desobtrucao_dea_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Desobstrução do D.E.A</span></div>
+            <div class="linha justify"><input type="checkbox" id="emprego_dea_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Emprego do D.E.A</span></div>
+            <div class="linha justify"><input type="checkbox" id="gerenciamento_riscos_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Gerenciamento dos Riscos</span></div>
+            <div class="linha justify"><input type="checkbox" id="limpeza_ferimentos_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Limpeza de Ferimentos</span></div>
+            <div class="linha justify"><input type="checkbox" id="curativos_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Curativos</span></div>
+            <div class="linha justify"><input type="checkbox" id="compressivo_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Compressivo</span></div>
+            <div class="linha justify"><input type="checkbox" id="encravamento_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Encravamento</span></div>
+            <div class="linha justify"><input type="checkbox" id="ocular_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Ocular</span></div>
+            <div class="linha justify"><input type="checkbox" id="queimadura_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Queimadura</span></div>
+            <div class="linha justify"><input type="checkbox" id="simples_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Simples</span></div>
+            <div class="linha justify"><input type="checkbox" id="3pontas_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">3 Pontas</span></div>
+            <div class="linha justify"><input type="checkbox" id="imobilizacao_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Imobilizações</span></div>
+            <div class="linha justify"><input type="checkbox" id="mmb_inf_dir_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Membro do INF.DIR</span></div>
+            <div class="linha justify"><input type="checkbox" id="mmb_inf_esq_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Membro do INF.ESQ</span></div>
+            <div class="linha justify"><input type="checkbox" id="mmb_sup_dir_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Membro do SUP.DIR</span></div>
+            <div class="linha justify"><input type="checkbox" id="mmb_sup_esq_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Membro do SUP.DIR</span></div>
+            <div class="linha justify"><input type="checkbox" id="quadril_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Quadril</span></div>
+            <div class="linha justify"><input type="checkbox" id="cervical_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cervical</span></div>
+            <div class="linha justify"><input type="checkbox" id="maca_sobre_rodas_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Maca Sobre Rodas</span></div>
+            <div class="linha justify"><input type="checkbox" id="maca_rigida_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Maca Rigida</span></div>
+            <div class="linha justify"><input type="checkbox" id="retirado_capacete_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Retirado do Capacete</span></div>
+            <div class="linha justify"><input type="checkbox" id="rcp_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">R.C.P</span></div>
+            <div class="linha justify"><input type="checkbox" id="rolamento90_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Rolamento 90°</span></div>
+            <div class="linha justify"><input type="checkbox" id="rolamento180_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Rolamento 180°</span></div>
+            <div class="linha justify"><input type="checkbox" id="tomada_decisao_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tomada Decisão</span></div>
+            <div class="linha justify"><input type="checkbox" id="tratamento_choque_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tratamento de Choque</span></div>
+            <div class="linha justify"><input type="checkbox" id="uso_canula_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Cânula</span></div>
+            <div class="linha justify"><input type="checkbox" id="uso_colar_pef" class="checkbox" onclick="UsoDeColarTamPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Colar</span>TAM<input type="text" id="text_colar_pef" class="input-linha" style="outline:none; width: 35px;display: none;"> </div>
+            <div class="linha justify"><input type="checkbox" id="uso_ked_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso KED</span></div>
+            <div class="linha justify"><input type="checkbox" id="Uso_ttf_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso TTF</span></div>
+            <div class="linha justify"><input type="checkbox" id="ventilacao_suporte_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Ventilação Suporte</span></div>
+            <div class="linha justify"><input type="checkbox" id="oxigenoterapia_pef" class="checkbox" onclick="OxigenoterapiaPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Oxigenoterapia</span> <input type="text" id="text_oxigenoterapia_pef" class="input-linha" style="outline:none; width: 35px; display: none;"> LPM</div>
+            <div class="linha justify"><input type="checkbox" id="reanimador_pef" class="checkbox" onclick="ReanimadorPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Reanimador</span> <input type="text" id="text_reanimador_pef" class="input-linha" style="outline:none; width: 35px; display: none;"> LPM</div>
+            <div class="linha justify"><input type="checkbox" id="meios_auxiliares_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Meios Auxiliares</span></div>
+            <div class="linha justify"><input type="checkbox" id="celesc_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Celesc</span></div>
+            <div class="linha justify">
+              <input type="checkbox" id="policia_radio_box" class="checkbox" onclick="PoliciaPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia</span>
+              <div class="coluna" id="policia_div_pef" style="display: none;">
+                <div class="linha justify"><input type="checkbox" id="policia_civil_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Civil</span></div>
+                <div class="linha justify"><input type="checkbox" id="policia_militar_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Militar</span></div>
+                <div class="linha justify"><input type="checkbox" id="policia_pre_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia PRE</span></div>
+                <div class="linha justify"><input type="checkbox" id="policia_prf_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia PRF</span></div>
+              </div>
+            </div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" id="def_civil_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">DEF.Civil</span></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" id="ipg_pc_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">IPG/PC</span></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" id="samu_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Samu</span></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" id="cit_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cit</span></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" id="textobox_pef" onclick="OutroPef()" style="width: 25px; height: 25px;"> <input id="texto_pef" type="text" class="input-linha" style="display: none; outline:none;" ></div>
+          
+          </form><!--Fim do corpo da página de ""-->
+
+      </div>
+      <div class="swiper-slide slide12"><!---------------------------------------------------------Inicio da página de Materiais Utilizados(A) --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Materiais Utilizados(A)
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+          <div class="cabecalho2 centro">
+              Descartavel          
+          </div>
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"style="padding-left: 0px;" ><!--inicio do corpo da página de ""-->
+          <table border="1" style="border-style:solid; border-color: #0667E8; width: 300px; margin-top: 20px;" class="centro">
+            <tr style="border-style:solid; border-color: #0667E8;">
+              <th>Material</th>
+              <th>Quant</th>
+            </tr>
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <td style="width: 400px; height: 25px;"><input class="checkbox" onclick="AtaduraCheckboxDivNone()" type="checkbox"  id="materiais_utilizadosA_ataduras"> Ataduras<div id="div_atadura" style="display: none;">  8<input value="Ataduras: 8" id="atadura_8" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> 12<input value="Ataduras: 12"  id="atadura_12" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras">  20<input value="Ataduras: 20" id="atadura_20" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> </div> </td>
+              <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_ataduras_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none; " type="number" ></td>
+            </tr>
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_cateter_tp_oculos"> Catéter TP. óculos </td>
+              <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_cateter_tp_oculos_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+          </tr>
+          <tr style="border-style:solid; border-color: #0667E8;" >
+            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_compressa_comum">Compressa Comum </td>
+            <td style="width: 100px; height: 25px;"><input  value=""  id="materiais_utilizadosA_compressa_comum_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+        </tr> 
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="KitCheckboxDivNone()"  id="materiais_utilizadosA_kit">Kit's <div id="div_kits" style="display: none;"> H <input type="radio" id="kits_h" class="radio" style="width:15px;height:15px;" value="Kit: H"name="Kit"> P<input value="Kit: P" type="radio" id="kits_p" class="radio" style="width:15px;height:15px;"name="Kit">  Q<input value="Kit: Q" type="radio" id="kits_q" class="radio" style="width:15px;height:15px;"name="Kit">   </div> </td>
+          <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_kit_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_luvas_descartaveis"> Luvas descartaveis (Pares) </td>
+        <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_luvas_descartaveis_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+    </tr>
+    <tr style="border-style:solid; border-color: #0667E8;" >
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_mascaras_desc"> Mascaras Desc. </td>
+              <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_mascaras_desc_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+  </tr>
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_manta_alumiada"> Manta Alumiada </td>
+          <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_manta_alumiada_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+        </tr>
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_pas_do_dea"> Pás do DEA </td>
+          <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_pas_do_dea_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_sonda_de_aspiracao">Sonda de Aspiraca </td>
+        <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_sonda_de_aspiracao_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+      </tr> 
+      <tr style="border-style:solid; border-color: #0667E8;" >
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_soro_fisiologico">Soro Fisiológico</td>
+      <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_soro_fisiologico_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="TalasCheckboxDivNone()"  id="materiais_utilizadosA_talas"> Talas PAP.<div id="div_talas" style="display: none;">  P<input type="radio" id="talas_p" class="radio" style="width:15px;height:15px;"  value="Talas: P"name="Talas: G"> G<input value="Talas " type="radio" id="talas_g" class="radio" style="width:15px;height:15px;"name="Talas"> </div> </td>
+      <td style="width: 100px; height: 25px;"><input  value="" id="materiais_utilizadosA_talas_txt" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+      <td style="width: 400px; height: 25px;"><input class="checkbox" onclick="TXTCheckboxDivNone()" type="checkbox"  id="materiais_utilizadosA_input_txt"> <input   id="materiais_utilizadosA_txt_div" style="border-style:solid; border-color: #0667E8; outline:none; width: 80px; display: none; width: 80px; height: 25px;" type="text" > </td>
+          <td style="width: 100px; height: 25px;"><input  id="materiais_utilizadosA_txt" value="" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" type="number" ></td>
+      </tr>
+          </table>
+
+        </div><!--Fim do corpo da página de ""-->
+
+      </div><!-- Fim da página de "" -->
+
+      <div class="swiper-slide slide13"><!---------------------------------------------------------Inicio da página de Materiais Utilizados(B) --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Materiais Utilizados(B)
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+          <div class="cabecalho2 centro">
+            Deixado no Hospital          
+        </div>
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro" style="padding-left: 0px;"><!--inicio do corpo da página de ""-->
+          <table border="1" style="border-style:solid; border-color: #0667E8; width: 300px; margin-top: 20px;" >
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <th>Material</th>
+              <th>Quant</th>
+            </tr>
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <td style="width: 400px; height: 25px;"><input class="checkbox" onclick="ExibirBaseEstab()" type="checkbox" id="base_estabilizador_mub"> Base do Estabiliza. </td>
+              <td style="width: 100px; height: 25px;">
+                <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="base_estabilizador_text_mub" type="number" >
+              </td>
+            </tr>
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <td style="width: 400px; height: 25px;">
+                <input class="checkbox" type="checkbox" onclick="ExibirColar1MUB()" id="colar_n_mub"> Colar 
+                <div id="exibir_div_colar1" style="display: none;">N 
+                  <input type="radio" name="colar_n_mub"  id="n_colar_mub" class="radio" style="width: 15px; height: 15px;"> PP
+                  <input type="radio" name="colar_n_mub" id="pp_colar_mub" class="radio" style="width: 15px; height: 15px;">  P
+                  <input type="radio" name="colar_n_mub" id="p_colar_mub" class="radio" style="width: 15px; height: 15px;">
+                </div>
+              </td>
+              <td style="width: 100px; height: 25px;">
+                <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="colar_text_n_mub" type="number" >
+              </td>
+          </tr>
+          <tr style="border-style:solid; border-color: #0667E8;" >
+            <td style="width: 400px; height: 25px;">
+              <input class="checkbox" type="checkbox" onclick="ExibirColar2MUB()" id="colar_m_mub">Colar 
+              <div id="exibir_div_colar2" style="display: none;">M 
+                <input type="radio" name="colar_m_mub" id="m_colar_mub" class="radio" style="width: 15px; height: 15px;"> G 
+                <input type="radio" name="colar_m_mub" id="g_colar_mub" class="radio" style="width: 15px; height: 15px;">
+                <input class="input-linha"  style=" outline:none; width: 25px; height: 25px;" id="text_colar_mub" type="text" >
+              </div>
+            </td>
+            <td style="width: 100px; height: 25px;">
+              <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="colar_m_text_mub" type="number" >
+            </td>
+        </tr> 
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;">
+            <input class="checkbox" type="checkbox" onclick="ExibirCoxinsEstab()" id="conxin_estabilizador_mub">Coxins Estabiliza.
+          </td>
+          <td style="width: 100px; height: 25px;">
+            <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="conxin_estabilizador_text_mub" type="number" >
+          </td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        <td style="width: 400px; height: 25px;">
+          <input class="checkbox" type="checkbox" onclick="ExibirKEDMUB()" id="ked_checkbox_mub"> KED
+          <div id="exibir_div_ked" style="display: none;"> 
+            <input type="radio" id="adul_mub" class="radio" name="ked_mub" style="width: 15px; height: 15px;">Adul. 
+            <input type="radio"id="infa_mub" class="radio" name="ked_mub" style="width: 15px; height: 15px;">Infa.
+          </div>
+        </td>
+        <td style="width: 100px; height: 25px;">
+          <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="ked_text_mub" type="number" >
+        </td>
+    </tr>
+    <tr style="border-style:solid; border-color: #0667E8;" >
+      <td style="width: 400px; height: 25px;">
+        <input class="checkbox" onclick="ExibirMacaRigida()" type="checkbox" id="maca_rigida_mub"> Maca Rígida 
+      </td>
+      <td style="width: 100px; height: 25px;">
+        <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="maca_rigita_text_mub" type="number" >
+      </td>
+    </tr>
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;">
+            <input class="checkbox" type="checkbox" onclick="ExibirTiranteAranha()" id="tirante_aranha_mub"> Tirante aranha 
+          </td>
+          <td style="width: 100px; height: 25px;">
+            <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="tirante_aranha_text_mub" type="number" >
+          </td>
+        </tr>
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;">
+            <input class="checkbox" type="checkbox" onclick="ExibirTiranteCabeca()" id="tirante_cabeca_mub">Tirante de cabeça 
+          </td>
+          <td style="width: 100px; height: 25px;">
+            <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="tirante_cabeca_text_mub" type="number" >
+          </td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        <td style="width: 400px; height: 25px;">
+          <input class="checkbox" type="checkbox" onclick="ExibirSondaAsp()" id="soma_aspiracao_mub">Sonda de Aspiração
+        </td>
+        <td style="width: 100px; height: 25px;">
+          <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="soma_aspiracao_text_mub" type="number" >
+        </td>
+      </tr> 
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        <td style="width: 400px; height: 25px;">
+          <input class="checkbox" type="checkbox" onclick="ExibirCanula()" id="canula_mub">Cânula
+        </td>
+        <td style="width: 100px; height: 25px;">
+          <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="canula_text_mub" type="number" >
+        </td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        <td style="width: 400px; height: 25px;">
+          <input class="checkbox" type="checkbox" onclick="ExibirOutroMUB()" id="checkbox_text_mub">
+          <input  style="border-style:solid; border-color: #0667E8; outline:none; width: 80px; height: 25px; display: none;" id="text_mub" type="text" >
+        </td>
+        <td style="width: 100px; height: 25px;">
+          <input class="input-linha" style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px; outline: none;" id="text_text_mub" type="number" >
+        </td>
+      </tr>
+          </table>
+
+        </div><!--Fim do corpo da página de ""-->
+
+      </div>
+
+      <div class="swiper-slide slide14"><!---------------------------------------------------------Inicio da página de Anamnese --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Anamnese
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body"><!--inicio do corpo da página de ""-->
+          <div class="coluna centro" style="width: 100%;" >
+            <span style="font-size: 20px; margin-top: 10px;">O que aconteceu(sinais e sintomas)</span>
+            <input type="text" id="oa_anamnese"   style="outline:none; border-style:solid; border-color: #0667E8;width: 300px; height: 20px; ">
+              
+            <div class="coluna centro"> 
+              <div class="linha centro"> 
+              <span style="font-size: 20px; margin-top: 10px;">Aconteceu outras vezes?</span> 
+            </div>
+              <div class="coluna centro"> 
+                  <div class="linha centro"> 
+                    <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                    <input type="radio" id="s_av" value="s" name="botao1_anamnese" class="radio" style="width: 20px; height: 20px;"> 
+                    <input  type="radio" id="n_av" value="n" name="botao1_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                    <span style="font-size: 20px;">não</span>
+                  </div>
+                </div>
+              </div>
+              <span style="font-size: 20px; margin-top: 10px;">A quanto tempo isso aconteceu?</span>
+              <input type="text" id="ac_anamnese"  style="outline:none; border-style:solid; border-color: #0667E8;width: 300px; height: 20px; ">
+                
+              <div class="coluna centro"> 
+                <div class="coluna centro"> 
+                  <div class="linha centro"> 
+                  <span style="font-size: 20px; margin-top: 10px;">Possui algum problema de saúde?</span> 
+                </div>
+                  <div class="coluna centro"> 
+                      <div class="linha centro"> 
+                        <span style="font-size: 20px; margin-left: 5px; ">  sim</span> 
+                        <input onclick="PAPDSQuaisRadio()" type="radio" id="s_ps" value="s" name="botao2_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                        <input onclick="PAPDSQuaisRadio()" type="radio" id="n_ps" value="n" name="botao2_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                        <span style="font-size: 20px;">não</span>
+                      </div>
+                    </div>
+                  </div>
+
+                   <div id="anamnese_quais_ps" class=" linha centro"  style="display: none;">
+                          <div class="coluna centro"> 
+                            <span style="font-size: 20px; margin-top: 10px;" >Quais?</span>
+                            <input type="text" id="qs_anamnese"  style="outline:none; border-style:solid; border-color: #0667E8;width: 300px; height: 20px; ">
+                          </div>
+                   </div>
+                </div>
+
+                <div class="coluna centro"> 
+                  <div class="coluna centro"> 
+                    <div class="linha centro"> 
+                    <span style="font-size: 20px; margin-top: 10px;">Faz uso de medicação?</span> 
+                  </div>
+                    <div class="coluna centro"> 
+                        <div class="linha centro"> 
+                          <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                          <input onclick="FUDMRadio()" type="radio" id="s_fm" value="s" name="botao3_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                          <input onclick="FUDMRadio()" type="radio" id="n_fm" value="n" name="botao3_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                          <span style="font-size: 20px;">não</span>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div  id="anamnese_hm_fm"class=" coluna centro"  style="display: none;">
+                          <div class="linha centro">
+                              <div class="coluna centro">
+                                <span style="font-size: 20px; margin-top: 10px;" >Horário da ultima <br>medicação?</span> 
+                                <input type="text" id="hu_anamnese"  style="outline:none; border-style:solid; border-color: #0667E8; width: 300px; height: 20px; ">
+                            </div>
+                          </div>
+                          <div class=" linha centro" style=" margin-top: 10px;">
+                              <div class="coluna centro">
+                                  <span style="font-size: 20px; margin-top: 5px;" >Quais?</span>
+                                  <input type="text" id="qis_anamnese"  style="outline:none; border-style:solid; border-color: #0667E8; width: 300px; height:20px; ">
+                            </div>
+                          </div> 
+                     </div>
+                  </div> 
+                  
+                  <div class="coluna centro"> 
+                    <div class="coluna centro"> 
+                      <div class="linha centro"> 
+                      <span style="font-size: 20px; margin-top: 10px;">Alérgico a algo?</span> 
+                    </div>
+                      <div class="coluna centro"> 
+                          <div class="linha centro"> 
+                            <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                            <input onclick="LaLRadio()"type="radio" id="s_al" value="s" name="botao4_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                            <input  onclick="LaLRadio()"type="radio" id="n_al" value="n" name="botao4_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                            <span style="font-size: 20px;">não</span>
+                          </div>
+                        </div>
+                      </div>
+
+                       <div id="anamnese_ee_aa" class=" linha centro"  style="display: none;">
+                              <div class=" coluna centro"> 
+                                <span style="font-size: 20px; margin-top: 10px;" >Especifique</span>
+                                <input type="text" id="eq_anamnese"  style="outline:none; border-style:solid; border-color: #0667E8; width: 300px; height: 20px; ">
+                              </div>
+                       </div>
+                    </div>
+                    <div class="coluna centro"> 
+                      <div class="coluna centro"> 
+                        <div class="linha centro"> 
+                        <span style="font-size: 20px; margin-top: 10px;">Ingeriu alimento ou liquido em 6h?</span> 
+                      </div>
+                        <div class="coluna centro"> 
+                            <div class="linha centro"> 
+                              <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                              <input onclick="IAOLEH()" type="radio" id="s_il" value="s" name="botao5_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                              <input onclick="IAOLEH()" type="radio" id="n_il" value="n" name="botao5_anamnese" class="radio"style="width: 20px; height: 20px;"> 
+                              <span style="font-size: 20px;">não</span>
+                            </div>
+                          </div>
+                        </div>
+                         <div id="anamnese_qh_il" class=" linha centro"  style="display: none;">
+                                <div class="coluna centro"> 
+                                  <span style="margin-top: 10px; font-size: 20px;" >Que horas?</span>
+                                  <input type="text" id="qr_anamnese"  style="outline:none; border-style:solid; border-color: #0667E8; width: 300px; height: 20px; ">
+                              </div>
+                         </div>
+                      </div> 
+                  
+          </div>
+
+        </div><!--Fim do corpo da página de ""-->
+
+      </div>
+      <div class="swiper-slide slide15" id="slide15" style="display: none;"><!---------------------------------------------------------Inicio da página de Anamnese Gestacional --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Anamnese Gestacional
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+        
+        <form method="post" class="slide-body"><!--inicio do corpo da página de ""-->
+          <div class="coluna centro" style="width: 100%;" >
+            <span style="font-size: 20px; margin-top: 10px;">Periodo de gestação <input type="text" id="pg_anamnese_gestacional"   style="border-style:solid; border-color: #0667E8; outline:none; width: 125px;"></span>
+          
+            <div class="coluna centro"> 
+              <div class="linha centro"> 
+              <span style="font-size: 20px; margin-top: 10px;">Fez pré-natal?</span> 
+             </div>
+              <div class="coluna centro"> 
+                  <div class="linha centro"> 
+                    <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                    <input type="radio" id="s_fp" value="s" name="botao1_anamnese_gestacional" class="radio" style="width: 20px; height: 20px;"> 
+                    <input  type="radio" id="n_fp" value="n" name="botao1_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                    <span style="font-size: 20px;">não</span>
+                  </div>
+                </div>
+              </div>
+              <span style="font-size: 20px; margin-top: 10px;">Nome do médico <input type="text" id="nm_anamnese_gestacional" style="border-style:solid; border-color: #0667E8; outline:none; width: 125px;"></span>
+                
+              <div class="coluna centro"> 
+                <div class="coluna centro"> 
+                  <div class="linha centro"> 
+                  <span style="font-size: 20px; margin-top: 10px;">Existe possibilidade de complicações?</span> 
+                </div>
+                  <div class="coluna centro"> 
+                      <div class="linha centro"> 
+                        <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                        <input type="radio" id="s_ec" value="s" name="botao2_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                        <input  type="radio" id="n_ec" value="n" name="botao2_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                        <span style="font-size: 20px;">não</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="coluna centro"> 
+                    <div class="linha centro"> 
+                    <span style="font-size: 20px; margin-top: 10px;">É o primeiro filho?</span> 
+                  </div>
+                    <div class="coluna centro"> 
+                        <div class="linha centro"> 
+                          <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                          <input onclick="EOPFRadio()" type="radio" id="s_ef" value="s" name="botao3_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                          <input onclick="EOPFRadio()" type="radio" id="n_ef" value="n" name="botao3_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                          <span style="font-size: 20px;">não</span>
+                        </div>
+                      </div>
+                    </div>
+                   <div id="ef_anamnese_gestacional" class=" linha centro" style="display:none;">
+                          <div class="coluna centro"> 
+                            <span style="font-size: 20px; margin-top: 10px;" >Quantos?</span>
+                            <input type="text" id="qs_anamnese_gestacional"  style="border-style:solid; border-color: #0667E8; outline:none; width: 225px; ">
+                          </div>
+                   </div>
+              </div>
+              <div class="coluna centro"> 
+                <div class="linha centro"> 
+                <span style="font-size: 20px; margin-top: 10px;">Tempo das contrações:</span> 
+               </div>
+                <div class="coluna centro"> 
+                    <div class="linha centro"> 
+                      <span style="font-size: 20px; margin-left: 5px; "> Duração:</span> 
+                      <input type="text" id="tc_anamnese_gestacional"  style="border-style:solid; border-color: #0667E8; outline:none; width: 45px;" > 
+                      
+                      <span style="font-size: 20px;">Intervalo:</span>
+                      <input type="text" id="io_anamnese_gestacional"  style="border-style:solid; border-color: #0667E8; outline:none; width: 45px;"  > 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="coluna centro"> 
+                  <div class="coluna centro"> 
+                    <div class="linha centro"> 
+                    <span style="font-size: 20px; margin-top: 10px;">Sente pressão na região do quadril ou <br><span style="font-size: 20px; margin-top: 10px; margin-left: 75px;"> vontade de evacuar?</span> </span> 
+                  </div>
+                    <div class="coluna centro"> 
+                        <div class="linha centro"> 
+                          <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                          <input type="radio" id="s_sq" value="s" name="botao4_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                          <input  type="radio" id="n_sq" value="n" name="botao4_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                          <span style="font-size: 20px;">não</span>
+                        </div>
+                      </div>
+                    </div>
+
+                     
+                  </div> 
+                  
+                  <div class="coluna centro"> 
+                    <div class="coluna centro"> 
+                      <div class="linha centro"> 
+                      <span style="font-size: 20px; margin-top: 10px;">Já houve ruptura da bolsa?</span> 
+                    </div>
+                      <div class="coluna centro"> 
+                          <div class="linha centro"> 
+                            <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                            <input type="radio" id="s_jb" value="s" name="botao5_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                            <input  type="radio" id="n_jb" value="n" name="botao5_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                            <span style="font-size: 20px;">não</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="coluna centro"> 
+                      <div class="coluna centro"> 
+                        <div class="linha centro"> 
+                        <span style="font-size: 20px; margin-top: 10px;">Foi feito inspeção visual?</span> 
+                      </div>
+                        <div class="coluna centro"> 
+                            <div class="linha centro"> 
+                              <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                              <input type="radio" id="s_fv" value="s" name="botao6_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                              <input  type="radio" id="n_fv" value="n" name="botao6_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                              <span style="font-size: 20px;">não</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div> 
+                      <div class="coluna centro"> 
+                        <div class="coluna centro"> 
+                          <div class="linha centro"> 
+                          <span style="font-size: 20px; margin-top: 10px;">Parto realizado?</span> 
+                        </div>
+                          <div class="coluna centro"> 
+                              <div class="linha centro"> 
+                                <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                                <input type="radio" id="s_pr" value="s" name="botao7_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                                <input  type="radio" id="n_pr" value="n" name="botao7_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                                <span style="font-size: 20px;">não</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+                        <span style="font-size: 20px; margin-top: 10px;">Hora do nascimento <input type="text" id="hn_anamnese_gestacional" style=" border-style:solid; border-color: #0667E8;outline:none; width: 125px;"></span>
+
+                        <div class="coluna centro"> 
+                          <div class="coluna centro"> 
+                            <div class="linha centro"> 
+                            <span style="font-size: 20px; margin-top: 10px;">Sexo do bebê</span> 
+                          </div>
+                            <div class="coluna centro"> 
+                                <div class="linha centro"> 
+                                  <span style="font-size: 20px; margin-left: 5px; "> Fem</span> 
+                                  <input type="radio" id="fem" value="fem" name="botao8_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                                  <input  type="radio" id="mas" value="mas" name="botao8_anamnese_gestacional" class="radio"style="width: 20px; height: 20px;"> 
+                                  <span style="font-size: 20px;">Mas</span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                        </div> 
+                        <span style="font-size: 20px; margin-top: 10px;">Nome do bebê <input type="text" id="nb_anamnese_gestacional" class="input-linha"style="outline:none; width: 125px;"></span>
+
+      </div>
+          
+        </form><!--Fim do corpo da página de ""-->
+
+      </div><!-- Fim da página de "" -->
+
+      <div class="swiper-slide slide16"><!---------------------------------------------------------Inicio da página de TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE--------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo" style="font-size: 15px;">
+            TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <form class="slide-body centro" method="post"><!--inicio do corpo da página de ""-->
+          <div class="coluna centro">
+            <div class="linha centro" style="margin-top: 15px;"><span style="margin-right: 5px;" >Eu</span><input id="nome_Recusa" type="text" style="outline:none;" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;">
+              <div class="coluna centro"> 
+                <span style="font-size: 15px;">PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº</span>
+                <input  type="number" id="identidade_Recusa" class="quadrado " style=" outline:none;width: 250px; height: 25px;">
+              </div>
+            </div>
+            <div class="linha centro"  style="margin-top: 15px;">
+              <div class="coluna centro"> 
+                <span style="font-size: 15px;">INSCRITO NO CPF SOB Nº</span>
+                <input  type="number" id="cpf_Recusa" class="quadrado " style=" outline:none;width: 250px; height: 25px;">
+              </div>
+            </div>
+            <div class=""> 
+             <div style="padding-left: 20px; padding-right: 20px; font-size: 15px; margin-top: 10px;">
+            NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE 
+            OFERECIDO PELOS BOMBEIROS- VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE 
+            PELAS CONSEQUENCIAS QUE POSSAMOCORRER POR RAZÃO DA MINHA RECUSA. 
+            DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER,
+            E ALERTADO SOBRE OS RISCOS À SAÚDE DASUANÃO REALIZAÇÃO.
+             </div>
+             
+              
+            </div>
+            
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">ASS:</span><input id="assinatura_Recusa" type="file" style="outline:none;"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Testemunha</span><input id="testemunha_Recusa" type="text" style="outline:none;" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Doc:</span><input id="doc_Recusa" type="text" style="outline:none;" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Testemunha</span><input id="testemunha_Recusa_2" type="text" style="outline:none;" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Doc:</span><input id="doc_Recusa_2" type="text" style="outline:none;" class="quadrado"></div>
+          </div>
+        </form><!--Fim do corpo da página de ""-->
+
+      </div>
+
+      <div class="swiper-slide slide17"><!---------------------------------------------------------Inicio da página de Observações Importantes --------------------------------------------------------->
+        
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Observações Importantes
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro" style="height: 100%;"><!--inicio do corpo da página de ""-->
+          <div class="quadrado" id="obsdiv" contenteditable="true" style="width: 300px; min-height: 600px; outline: none; border: 1px solid #0667E8; word-break: break-all; word-wrap: break-word;"></div>
+        </div><!--Fim do corpo da página de ""-->
+
+      </div>
+      <div class="swiper-slide slide18"><!---------------------------------------------------------Inicio da página de Avaliação Cinemática --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Avaliação Cinemática
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro"style="padding-left: 0px;" ><!--inicio do corpo da página de ""-->
+          <table border="1" style=" border-style:solid; border-color: #0667E8; width: 300px; " class="centro">
+            <tr style="border-style:solid; border-color: #0667E8;padding-top: 25px;">
+              <th style="border-style: none;"></th>
+              <th style="color: rgb(3, 168, 3);">Sim</th>
+              <th style="color: red;">Não</th>
+            </tr>
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <td style="width: 400px; height: 25px;">Distúrbio de comportamento </td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Distúrbio de comportamento: s" name="avaliacao_cimetica_comportamento" id="avaliacao_cimetica_dc_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Distúrbio de comportamento: n" name="avaliacao_cimetica_comportamento" id="avaliacao_cimetica_dc_n" style="width: 24px;height: 24px;"></td>
+            </tr>
+            <tr style="border-style:solid; border-color: #0667E8;" >
+              <td style="width: 400px; height: 25px;">  Encontrado de capacete</td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Encontrado de capacete: s" name="avaliacao_cimetica_capacete" id="avaliacao_cimetica_ec_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Encontrado de capacete: n" name="avaliacao_cimetica_capacete" id="avaliacao_cimetica_ec_n" style="width: 24px;height: 24px;"></td>
+          </tr>
+          <tr style="border-style:solid; border-color: #0667E8;" >
+            <td style="width: 400px; height: 25px;">Encontrado de cinto</td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Encontrado de cinto: s" name="avaliacao_cimetica_cinto" id="avaliacao_cimetica_eo_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Encontrado de cinto: n" name="avaliacao_cimetica_cinto" id="avaliacao_cimetica_eo_n" style="width: 24px;height: 24px;"></td>
+        </tr> 
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          
+          <td style="width: 400px; height: 25px;">Para-brisas avariado</td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Para-brisas avariado: s" name="avaliacao_cimetica_avariado" id="avaliacao_cimetica_pba_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Para-brisas avariado: n" name="avaliacao_cimetica_avariado" id="avaliacao_cimetica_pba_n" style="width: 24px;height: 24px;"></td>
+      </tr>
+      <tr style="border-style:solid; border-color: #0667E8;" >
+        
+        <td style="width: 400px; height: 25px;">Caminhando na cena</td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Caminhando na cena: s" name="avaliacao_cimetica_cena" id="avaliacao_cimetica_cc_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Caminhando na cena: n" name="avaliacao_cimetica_cena" id="avaliacao_cimetica_cc_n" style="width: 24px;height: 24px;"></td>
+    </tr>
+    
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          
+          <td style="width: 400px; height: 25px;">Painel avariado</td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Painel avariado: s" name="avaliacao_cimetica_painel_avariado" id="avaliacao_cimetica_pa_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Painel avariado: n" name="avaliacao_cimetica_painel_avariado" id="avaliacao_cimetica_pa_n" style="width: 24px;height: 24px;"></td>
+        </tr>
+        <tr style="border-style:solid; border-color: #0667E8;" >
+          <td style="width: 400px; height: 25px;">Volante torcido</td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Volante torcido: s" name="avaliacao_cimetica_torcido" id="avaliacao_cimetica_vt_s" style="width: 24px;height: 24px;"></td>
+              <td style="width: 100px; height: 25px;"> <input class="radio" type="radio" value="Volante torcido: n" name="avaliacao_cimetica_torcido" id="avaliacao_cimetica_vt_n" style="width: 24px;height: 24px;"></td>
+      </tr>
+      
+          </table>
+  
+        </div><!--Fim do corpo da página de ""-->
+
+      </div><!-- Fim da página de "" -->
+
+      <div class="swiper-slide slide19"><!---------------------------------------------------------Inicio da página de verificação --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Verificação
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro">
+          <span style="text-align:center; font-size: 20px">Pressione esse botão para verificar se existem valores vazios</span>
+          <button  onclick="ChegarInputs()" style="
+                margin-top: 25px; 
+                background-color: greenyellow;
+                border-style: solid;border-radius: 10px;
+                border-color: green; 
+                width: 160px;
+                height: 60px;"> 
+                <span style="font-size: 20px;">Verificar</span> 
+            </button>
+            <div class="coluna " >
+              <span style="text-align:center; font-size: 20px; margin-top: 40px;">Pressione esse botão para concluir a ficha</span>
+              <div class=" linha centro"> 
+                <button  onclick="RegistrarPaciente()" style="
+                  margin-top: 25px; 
+                  background-color: greenyellow;
+                  border-style: solid;border-radius: 10px;
+                  border-color: green; 
+                  width: 160px;
+                  height: 60px;"> 
+                  <font style="font-size: 20px;">CONCLUÍDO</font> </button>
+              </div>
+                <span class="centro">Divulgar para imprensa </span>
+                    <div class="linha centro"> 
+                      <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
+                      <input type="radio" name="batata" style="width: 20px; height: 20px;"> 
+                      <input type="radio" name="batata" style="width: 20px; height: 20px;">
+                      <span style="font-size: 20px;">não</span>
+                    </div>
+            </div>
+        </div>
+      </div><!---------------------------------------------------------Inicio da página de Verificação --------------------------------------------------------->
+      <div class="swiper-slide slide20" id="slide20" style="height: 1600px; background-color: #0667E8; display: none;"><!---------------------------------------------------------Inicio da página de verificação --------------------------------------------------------->
+
+      </div><!---------------------------------------------------------Inicio da página de Verificação --------------------------------------------------------->
+</body>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="JS/index.js"></script>
+  <script src="JS/swiper.js"></script>
+  <script src="JS/rolagem.js"></script>
+  <script src="JS/localizar-trauma.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  
+  
+</html>

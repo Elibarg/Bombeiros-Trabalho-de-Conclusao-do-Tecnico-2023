@@ -1,0 +1,46 @@
+-- comando para excluir dados por chave estrangeira
+DELETE FROM anamnese_gestacional WHERE anamnese_gestacional.cpf_paciente = 3;
+DELETE FROM anamnese WHERE anamnese.cpf_paciente = 3;
+DELETE FROM avaliacao_paciente_menor WHERE avaliacao_paciente_menor.cpf_paciente = 3;
+DELETE FROM avaliacao_paciente_maior WHERE avaliacao_paciente_maior.cpf_paciente = 3;
+DELETE FROM decisao_transporte WHERE decisao_transporte.cpf_paciente = 3;
+DELETE FROM emergencias WHERE emergencias.cpf_paciente = 3;
+DELETE FROM forma_conducao WHERE forma_conducao.cpf_paciente = 3;
+DELETE FROM localizacao_traumas WHERE localizacao_traumas.cpf_paciente = 3;
+DELETE FROM materiais_utilizados_deixados_hospital WHERE materiais_utilizados_deixados_hospital.cpf_paciente = 3;
+DELETE FROM material_utilizados_descartavel WHERE material_utilizados_descartavel.cpf_paciente = 3;
+DELETE FROM objetos_recolhidos WHERE objetos_recolhidos.cpf_paciente = 3;
+DELETE FROM problemas_suspeitos WHERE problemas_suspeitos.cpf_paciente = 3;
+DELETE FROM procedimentos_efetuados WHERE procedimentos_efetuados.cpf_paciente = 3;
+DELETE FROM sinais_e_sintomas WHERE sinais_e_sintomas.cpf_paciente = 3;
+DELETE FROM sinais_vitais WHERE sinais_vitais.cpf_paciente = 3;
+DELETE FROM tabela_paciente WHERE tabela_paciente.cpf_paciente = 3;
+DELETE FROM termo_recusa WHERE termo_recusa.cpf_paciente = 3;
+DELETE FROM observacoes_importantes WHERE observacoes_importantes.cpf_paciente = 3;
+DELETE FROM avaliacao_cinematica WHERE avaliacao_cinematica.cpf_paciente = 3;
+DELETE FROM objetos_recolhidos_imagem WHERE objetos_recolhidos_imagem.cpf_paciente = 3;
+
+-- comando para adicionar chave estrangeira
+ALTER TABLE Tabela_a_ser_alterada
+ADD CONSTRAINT fk_nome_da_chave_estrangeira
+FOREIGN KEY (nome_da_coluna) 
+REFERENCES Tabela_original_da_chave(coluna_original_da_chave);
+
+-- sla oq é isso kkkj
+anamnese
+anamnese_gestacional
+avaliacao_cinematica
+avaliacao_paciente_maior
+avaliacao_paciente_menor
+cadastro
+decisao_transporte
+emergencias
+forma_conducao
+material_utilizados_a
+material_utilizados_b
+paciente
+problemas_suspeitos
+sinais_e_sintomas
+sinais_vitais
+tabela_paciente
+termo_recusa

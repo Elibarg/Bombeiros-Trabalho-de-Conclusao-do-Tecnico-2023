@@ -1,0 +1,226 @@
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    font-size: 20px;
+    overflow: hidden;
+}
+.menu-lateral{
+    width: 80px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: rgb(55, 198, 201);
+    display: flex;
+    flex-direction: column;
+}
+.barra-Lateral {
+    margin-top: 54px;
+    width: 200px; 
+    height: 50px; 
+    position: absolute; 
+    left: 80px; 
+    top: 85%;
+    transition: left 0.3s ease;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999; 
+  }
+
+  .menu-icon {
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+  }
+  .menu-icon.clicked {
+    filter: brightness(30%);
+  }
+.coluna{
+    display: flex;
+    flex-direction: column;
+}
+.centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.justify{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.space-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.bloco-principal{
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bloco-cinza{
+    width: 98%;
+    height: 78%;
+    padding-top: 2%;
+    padding-left: 2%;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+}
+.bloco-branco{
+    width: 98%;
+    padding-left: 2%;
+    height:15% ;
+}
+.cabecalho{
+    width: 98%;
+    height: 70px;
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: white;
+    border: 1px solid black;
+}
+.pesquisa-usuario{
+    width: 500px;
+    height: 50px;
+    padding-left: 20px;
+    border: none;
+    border-left: 4px solid gray;
+}
+.input-text{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    outline: none;
+    border: 2px solid gray;
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 4px;
+}
+.input-text-usuario{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 4px;
+    border-radius: 10px;
+}
+.input-text-usuario-active{
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  width: 198px;
+  height: 30px;
+  font-size: 15px;
+  padding-left: 4px;
+  border-radius: 10px;
+}
+.linha-tabela{
+    width: 1200px;
+    height: 50px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+.exibir{
+    font-size: 20px;
+}
+.quadrado{
+    display: flex;
+    border: 1px 1px 1px;
+    
+  }
+  .circulo {
+    display: flex;
+    border: 1px 1px 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 50px;
+  }
+  .linha{
+    display: flex;
+    flex-direction: row;
+  }
+  /* Defina o estilo do elemento que terá o gradiente */
+.gradient-box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 150% 150%;
+    animation: gradient-animation 4s ease infinite;
+  }
+  
+  /* Defina a animação */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.custom-select img {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
+
+.painel-edicao{
+  position: absolute;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -100px;
+  border: 1px solid black;
+  width: 500px;
+  height: 220px;
+  display: flex;
+  padding-top: 15px;
+  background-color: white;
+  z-index: 2;
+}
+
+.blackbg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.350);
+  z-index: 1;
+}
+
+  

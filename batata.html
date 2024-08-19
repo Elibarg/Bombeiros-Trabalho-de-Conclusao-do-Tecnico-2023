@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Div para Imagem</title>
+</head>fafa
+<body>
+
+<div id="captura_traumas">
+    <h1>Conteúdo da Div</h1>
+    <p>Este é um exemplo de texto dentro da div.</p>
+    <!-- Adicione o conteúdo qufe você deseja transformar em uma imagem aqui -->
+</div>da
+<div id="dv_traumas_imagem" style="width: 1000px; height: 1000px; background-color: black;"></div>
+
+<button onclick="gerarImagem()">Gerar Imagem</button>
+
+<script>
+    function gerarImagem() {
+        var TraumaDivExemplo = document.getElementById("dv_traumas_imagem");
+        // Seleciona a div pelo ID
+        const divParaImagem = document.getElementById('captura_traumas');
+
+        // Usa a biblioteca html2canvas para criar uma imagem a partir da div
+        html2canvas(divParaImagem).then(function(canvas) {
+            // Cria um elemento de imagem
+            const imagem = new Image();
+            imagem.src = canvas.toDataURL('image/png');
+
+            // Adiciona a imagem ao elemento pai desejado
+            TraumaDivExemplo.appendChild(imagem);
+        });
+    }
+</script>
+
+</body>
+</html>

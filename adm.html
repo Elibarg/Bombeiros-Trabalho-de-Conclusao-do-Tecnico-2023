@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/cadastro.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="IMAGENS/logo_medicina.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+  <title>ADM</title>
+</head>
+<body class="centro" >
+  <div class="coluna centro">
+    <img src="IMAGENS/logo.png" width="250px" >
+    <span  style="text-align:center; color: white; font-size: 50px;">Login ADM</span>
+    <input type="text" class="inputtextlogin" id="codigo" placeholder="código:">
+    <input type="password" class="inputtextlogin" id="senha" placeholder="senha:">
+  </div>
+  <button  type="submit" onclick="login()" class="botao_pisca_pisca" > <span style="font-size: 20px;">Login</span> </button>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="JS/login.js"></script>
+<script>
+  function login(){
+    var id = document.getElementById('codigo');
+    var senha = document.getElementById('senha');
+
+    $.ajax({
+        url: 'PHP/verficar-login-adm.php',
+        method: 'POST',
+        data: {
+           id: id.value,
+           senha: senha.value
+        },
+        dataType: 'json'
+    }).done(function(result){
+      if (result.success) {
+            window.location.href = 'adm-menu.html';
+        } else {
+            alert("Erro: " + result.error);
+        }
+    }).fail(function(errorThrown) {
+        console.log(errorThrown);
+       
+    });
+  }
+</script>
+</html>

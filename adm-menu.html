@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADM - NOAR</title>
+    <link rel="stylesheet" href="CSS/menu-adm.css" type="text/css">
+    <link rel="icon" href="IMAGENS/logo_medicina.png" type="image/png">
+</head>
+<body>
+    <div id="barra-Lateral coluna" class="barra-Lateral" style="left: -220px;">
+        <!-- margin-top: 2px; width: 200px; height: 190px; position: absolute; left: 80px; top: 75%;-->  
+        <div class="quadrado centro "  style=" display: flex; background-color: rgba(0, 0, 0, 0.681); border-color: #000000; border-width: 2px; border: solid;"> 
+                 <!-- <div class="circulo" id="foto_usu" style="width: 100px; height: 100px; border-color: #ffff;margin-bottom: 20px;"></div> -->
+                <div style=" font-size: 15px; color: white; margin-right: 65px;">
+                    <span id="nome_que_vai_vir"style="word-break: break-all; word-wrap: break-word; " >[Usuario]</span>
+                </div>
+            </label>
+        </div>
+                
+    </div>
+    <div class="menu-lateral">
+        <div class="coluna centro" style="height: 10vh; width: 80px;">
+            <div class="centro" style="width: 50px; height: 50px; "> <a href="adm-menu.html"> <img src="IMAGENS/home.png" width="35px"> </a>  </div>
+        </div>
+        <div class="coluna justify" style="height: 79vh; width: 80px; margin-top: 1vh;">
+            <div class="centro" style="width: 50px; height: 50px;  margin-top: 20px;"><a href="historico-ocorrencias.html"><img src="IMAGENS/ficha.png" width="35px"></a></div>
+            
+        </div> 
+        <div class="coluna justify" style="height: 9vh; width: 80px; margin-top: 1vh;">
+            <div class="centro " style="width: 50px; height: 50px; "><img class="menu-icon" src="IMAGENS/user.png" width="35px"></div>
+        </div>
+     
+    </div>
+    <div class="bloco-principal centro">
+
+
+        <!--CABECALHO-->
+        <div class="cabecalho justify" style="justify-content: space-between">
+            <span>Início</span>
+            <button onclick="logout()" style="border: none; background-color: transparent; font-size: 18px; cursor: pointer">Sair</button>
+        </div>
+        <!--FIM CABECALHO-->
+
+
+        <!--BLOCO BRANCO-->
+        <div class="bloco-branco">
+
+        </div>
+        <!--FIM BLOCO BRANCO-->
+
+
+        <!--BLOCO CINZA-->
+        <div class="bloco-cinza">
+        
+
+            <!--BlOCO DE PESQUISA-->
+            <div class="justify" style="width: 1200px; justify-content: space-between;">
+
+                <div class="pesquisa-usuario justify">
+                    <div class="justify" style="border: 2px solid gray; background-color: white; border-radius: 5px;">
+                        <input id="inputPesquisaBombeiro" onkeypress="realizarPesquisaEnter(event)" type="text" class="input-text" style="border:none; background-color: transparent;">
+                        <button id="botaoPesquisaBombeiro" onclick="realizarPesquisa()" style=" width: 40px; border: none; height: 36px; background-color: transparent; cursor: pointer;">
+                            <div class="centro" style="border:none;  width: 30px; height: 30px;">
+                                <img src="IMAGENS/lupa.png" width="15px">
+                            </div>
+                        </button>
+                    </div>
+                    <select id="selectPesquisaBombeiro" style="width: 80px; height: 40px; border: 2px solid gray; border-radius: 5px; background-color: white; outline: none; margin-left: 10px;">
+                        <option value="opcao_nada">Selecionar</option>
+                        <option value="opcao_nome">Nome</option>
+                        <option value="opcao_chave">Chave</option>
+                    </select>
+                </div>
+
+                <div class="justify">
+                    <select id="select_adm" onchange="executarSelect()" style="width: 80px; height: 40px; border: 2px solid gray; border-radius: 5px; background-color: white; outline: none; margin-left: 10px;">
+                        <option value="opcao_nada"></option>
+                        <option value="opcao_nome">Nome</option>
+                    </select>
+                    <button onclick="MudarOrdemRegistro()" style="width: 30px; height: 30px; border: 1px solid gray; border-radius: 5px; margin-left: 10px; cursor: pointer;"><img src="IMAGENS/a-z.png" width="100%"></button>
+                </div>
+
+            </div>
+            
+            <!--FIM BlOCO DE PESQUISA-->
+
+
+            <!--EDIÇÃO GERAL-->
+            <label style="margin-top: 20px; font-size: 20px;">Adicionar/Editar Usuario/Excluir</label>
+            <div class="linha-tabela justify">
+                <div class="space-evenly" style="width: 800px;">
+                    <input class="input-text"placeholder="Nome" id="nome_geral">
+                    <input class="input-text" placeholder="Senha" id="senha_geral" >
+                    <input class="input-text" placeholder="Chave de Acesso" id="acesso_geral">
+                    <label style="font-size: 18px;">Admin<input type="checkbox" id="admin_geral"></label>
+                </div>
+                <div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;">
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(40, 221, 4); cursor: pointer;" onclick="AdicionarGeral()"><img src="IMAGENS/Confirm.png" width="15px"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12); cursor: pointer;" onclick="EditarGeral()"><img src="IMAGENS/edit.png" width="15px"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114); cursor: pointer;" onclick="ExcluirGeral(0)"><img src="IMAGENS/lixo.png" width="13px"></button>
+                </div>
+            </div>
+            <!--FIM EDIÇÃO GERAL-->
+
+
+            <!--REGISTROS DOS USUARIOS-->
+
+
+            <div class="linha-tabela justify" style="margin-top: 20px;background-color: rgb(63, 177, 139);">
+                <div class="space-evenly" style="width: 900px;">
+                    <input style="font-size: 20px;" class="input-text-usuario" value="Nome" readonly><div style="width: 1px; height: 52px; background-color: black;"></div>
+                    <input style="font-size: 20px;" class="input-text-usuario" value="Senha" readonly><div style="width: 1px; height: 52px; background-color: black;"></div>
+                    <input style="font-size: 20px;" class="input-text-usuario" value="Chave de Acesso" readonly><div style="width: 1px; height: 52px; background-color: black;"></div>
+                </div>
+            </div>
+
+            <div class="exibir">
+                <div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai">
+                    <div class="space-evenly" style="width: 900px;">
+                        <input class="input-text-usuario" value="' + result[i].nome_cadastro + '" id="nomeEspecifico' + result[i].cod_cadastro + '" readonly>
+                        <div style="width: 1px; height: 52px; background-color: black;"></div>
+                        <input class="input-text-usuario" value="' + result[i].senha_cadastro + '" id="senhaEspecifico' + result[i].cod_cadastro + '" readonly>
+                        <div style="width: 1px; height: 52px; background-color: black;"></div>
+                        <input class="input-text-usuario" value="' + result[i].cod_cadastro + '" id="codigoEspecifico' + result[i].cod_cadastro + '" readonly>
+                        <div style="width: 1px; height: 52px; background-color: black;"></div>
+                    </div>
+                    <div class="space-evenly justify" style="width: 180px ;height: 100%; float: right;">
+                        <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12); cursor: pointer;" onclick="editarNomeEspecificdo(' + result[i].cod_cadastro + ')">
+                            <img src="IMAGENS/edit.png" width="15px">
+                        </button>
+                        <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114); cursor: pointer;" onclick="ExcluirGeral(' + result[i].cod_cadastro + ')">
+                            <img src="IMAGENS/lixo.png" width="13px">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM REGISTROS DOS USUARIOS-->
+
+
+        </div>
+        <!--FIM BLOCO CINZA-->
+        
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="JS/adm-menu.js"></script>
+</html>
